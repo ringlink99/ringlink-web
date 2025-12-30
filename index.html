@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RingLink - The World’s First Shared Alarm App</title>
+    <meta name="description"
+        content="Wake up together with RingLink, the world's first shared alarm app. Hold your friends accountable and never miss a wake-up call.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="1.png">
+    <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Xr es pi Zr rs Kr Qr capture Ni calculateEventProperties os register register_once register_for_session unregister unregister_for_session ds getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty us ns createPersonProfile hs Vr vs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing ss debug O ls getPageViewId captureTraceFeedback captureTraceMetric qr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_QEJjgJRjInsaWoSx0N1IO0xbiH7lep3xS1Ct51wPy88', {
+        api_host: 'https://eu.i.posthog.com',
+        defaults: '2025-11-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+    </script>
+</head>
+
+<body>
+    <!-- Intro Loader -->
+    <div id="intro-loader" class="intro-loader">
+        <div class="loader-content">
+            <!-- Inlined RingLink SVG for Animation -->
+            <svg class="loader-svg" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 768 768"
+                preserveAspectRatio="xMidYMid meet">
+                <!-- Outer Ring (ID: ring) -->
+                <g clip-path="url(#a00d0c0e81)">
+                    <g clip-path="url(#80ce42ab03)">
+                        <path id="ring" stroke="#1a1a1a" stroke-width="40" fill="none" stroke-linecap="butt"
+                            transform="matrix(0.75, 0, 0, 0.75, 365.866156, 376.531525)"
+                            d="M 24.02221 -0.000367159 C 10.756584 -0.000367159 0.0013752 10.754842 0.0013752 24.025676 C 0.0013752 37.291301 10.756584 48.04651 24.02221 48.04651 C 37.293044 48.04651 48.048253 37.291301 48.048253 24.025676 C 48.048253 10.754842 37.293044 -0.000367159 24.02221 -0.000367159 Z M 24.02221 -0.000367159 " />
+                    </g>
+                </g>
+                <!-- Hands (ID: hands) -->
+                <g id="hands" stroke="#1a1a1a" fill="none" stroke-linecap="round" stroke-linejoin="miter">
+                    <path stroke-width="20" d="M 9.999715 10.002655 L 114.79201 9.998912 "
+                        transform="matrix(0.659055, -0.357976, 0.357976, 0.659055, 386.860179, 383.90924)" />
+                    <path stroke-width="20" d="M 10.001484 9.999168 L 63.088534 10.000313 "
+                        transform="matrix(0.353723, 0.661347, -0.661347, 0.353723, 394.852512, 398.395488)" />
+                </g>
+                <!-- Ticks (Class: ticks) -->
+                <g class="ticks" stroke="#1a1a1a" fill="none" stroke-linecap="round" stroke-linejoin="miter">
+                    <path stroke-width="20" d="M 9.999188 10.001409 L 27.431612 9.998259 "
+                        transform="matrix(0.749995, -0.00277754, 0.00277754, 0.749995, 138.113507, 387.206456)" />
+                    <path stroke-width="20" d="M 10.000261 9.997792 L 27.432665 9.999851 "
+                        transform="matrix(0.749995, -0.00277754, 0.00277754, 0.749995, 604.718181, 387.154484)" />
+                    <path stroke-width="14" d="M 6.999466 6.999653 L 24.754712 7.002638 "
+                        transform="matrix(0.649519, 0.375, -0.375, 0.649519, 576.965302, 505.762387)" />
+                    <path stroke-width="14" d="M 6.999401 6.997428 L 24.754647 7.000414 "
+                        transform="matrix(0.649519, 0.375, -0.375, 0.649519, 179.550448, 262.447449)" />
+                    <path stroke-width="14" d="M 6.998358 6.999734 L 23.746923 6.998647 "
+                        transform="matrix(0.380121, 0.646535, -0.646535, 0.380121, 273.470819, 177.099724)" />
+                    <path stroke-width="14" d="M 6.997421 7.001066 L 23.745986 6.999979 "
+                        transform="matrix(0.380121, 0.646535, -0.646535, 0.380121, 496.190786, 586.904511)" />
+                    <path stroke-width="14" d="M 6.997123 7.000284 L 24.054666 6.997422 "
+                        transform="matrix(-0.649519, 0.375, -0.375, -0.649519, 199.939402, 514.856491)" />
+                    <path stroke-width="14" d="M 7.002844 7.000131 L 24.057783 7.001779 "
+                        transform="matrix(-0.649519, 0.375, -0.375, -0.649519, 597.361029, 270.90112)" />
+                    <path stroke-width="14" d="M 7.000146 6.999599 L 23.803142 6.999073 "
+                        transform="matrix(-0.375, 0.649519, -0.649519, -0.375, 508.683146, 182.566403)" />
+                    <path stroke-width="14" d="M 7.001266 6.997105 L 24.842307 7.001126 "
+                        transform="matrix(-0.360677, 0.65758, -0.65758, -0.360677, 284.817762, 591.486207)" />
+                    <path stroke-width="20" d="M 9.998504 10.000424 L 27.430796 10.000424 "
+                        transform="matrix(0, -0.75, 0.75, 0, 369.226245, 179.936377)" />
+                    <path stroke-width="20" d="M 10.002144 10.000425 L 27.429229 10.000425 "
+                        transform="matrix(0, -0.75, 0.75, 0, 376.726244, 637.50942)" />
+                    <path stroke-width="23" d="M 11.501188 11.501552 L 31.772173 11.498498 "
+                        transform="matrix(0.749995, -0.00277754, 0.00277754, 0.749995, 98.264098, 385.944903)" />
+                    <path stroke-width="23" d="M 11.501665 11.498377 L 31.772631 11.500532 "
+                        transform="matrix(0.749995, -0.00277754, 0.00277754, 0.749995, 637.677811, 385.884786)" />
+                    <path stroke-width="16" d="M 7.997731 8.000792 L 28.709146 7.999013 "
+                        transform="matrix(0.649519, 0.375, -0.375, 0.649519, 605.559525, 523.015122)" />
+                    <path stroke-width="16" d="M 8.000097 8.000285 L 28.711513 7.998506 "
+                        transform="matrix(0.649519, 0.375, -0.375, 0.649519, 146.132017, 241.733314)" />
+                    <path stroke-width="16" d="M 7.997323 7.999688 L 27.542686 7.999564 "
+                        transform="matrix(0.380121, 0.646535, -0.646535, 0.380121, 254.68291, 143.042504)" />
+                    <path stroke-width="16" d="M 8.000558 8.002512 L 27.541431 7.999747 "
+                        transform="matrix(0.380121, 0.646535, -0.646535, 0.380121, 512.156162, 616.793245)" />
+                    <path stroke-width="16" d="M 8.001382 8.002695 L 27.903353 8.000224 "
+                        transform="matrix(-0.649519, 0.375, -0.375, -0.649519, 169.701967, 533.408322)" />
+                    <path stroke-width="16" d="M 8.000632 7.998196 L 27.899998 8.000235 "
+                        transform="matrix(-0.649519, 0.375, -0.375, -0.649519, 629.137292, 251.38615)" />
+                    <path stroke-width="16" d="M 8.001613 8.001788 L 27.607045 8.001057 "
+                        transform="matrix(-0.375, 0.649519, -0.649519, -0.375, 526.592449, 149.295658)" />
+                    <path stroke-width="16" d="M 7.996663 7.999074 L 28.811825 7.999469 "
+                        transform="matrix(-0.360677, 0.65758, -0.65758, -0.360677, 267.800498, 622.021165)" />
+                    <path stroke-width="23" d="M 11.499515 11.498901 L 31.770349 11.498901 "
+                        transform="matrix(0, -0.75, 0.75, 0, 368.102387, 146.288698)" />
+                    <path stroke-width="23" d="M 11.499067 11.498901 L 31.769902 11.498901 "
+                        transform="matrix(0, -0.75, 0.75, 0, 375.602387, 675.788363)" />
+                </g>
+                <defs>
+                    <clipPath id="a00d0c0e81">
+                        <path
+                            d="M 365.867188 376.53125 L 401.867188 376.53125 L 401.867188 412.53125 L 365.867188 412.53125 Z M 365.867188 376.53125 "
+                            clip-rule="nonzero" />
+                    </clipPath>
+                    <clipPath id="80ce42ab03">
+                        <path
+                            d="M 383.882812 376.53125 C 373.933594 376.53125 365.867188 384.597656 365.867188 394.550781 C 365.867188 404.5 373.933594 412.566406 383.882812 412.566406 C 393.835938 412.566406 401.902344 404.5 401.902344 394.550781 C 401.902344 384.597656 393.835938 376.53125 383.882812 376.53125 Z M 383.882812 376.53125 "
+                            clip-rule="nonzero" />
+                    </clipPath>
+                </defs>
+            </svg>
+
+        </div>
+    </div>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <!-- Changed nav-container to container navbar-content for consistency -->
+            <a href="#" class="logo">
+                <img src="Ringlink-logo.png" alt="RingLink Logo">
+                RingLink
+            </a>
+            <a href="#waitlist" class="btn btn-sm btn-nav">Join beta</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content animate-on-scroll">
+            <h1 class="hero-title">The first shared alarm app.<br>Set one ring for all.</h1>
+            <p class="hero-subtitle">Shared alarms for friends, couples, and teams.</p>
+            <div class="cta-group">
+                <form id="hero-waitlist-form" class="waitlist-form">
+                    <div class="glass-input-wrapper">
+                        <input type="email" id="hero-email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn btn-pill">Get early access</button>
+                    </div>
+            </div>
+            </form>
+            <div style="height: 12px;"></div> <!-- Spacer for perfect positioning -->
+            <span class="micro-text">Early access • No spam</span>
+        </div>
+        </div>
+        <div class="hero-images animate-on-scroll animate-delay-2" style="margin-bottom: 0; z-index: 20;">
+            <!-- Central focus Hero Image -->
+            <img src="Hero3.png" alt="RingLink App Interface Main" class="app-screen screen-main"
+                style="position: relative; transform: none; left: 100px; top: auto; width: 662px; display: block;">
+        </div>
+    </header>
+
+    <!-- Problem / Value Section -->
+    <section class="problem-section animate-on-scroll">
+        <div class="container">
+            <p class="section-text">
+                <span class="reveal-text"></span>Waking each other up starts with calls and texts.</span>
+                <span class="reveal-text">After a few days, it gets awkward—and people stop.</span>
+                <span class="reveal-text">RingLink makes it simple: set it once, and we handle the rest.</span>
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- Feature Showcase Section -->
+    <section class="showcase-section">
+        <div class="container">
+            <!-- Section A: Image Left, Text Right (Desktop) -->
+            <!-- HTML Order: Text then Image (for Mobile stacking) -->
+            <div class="showcase-row desktop-row-reverse">
+                <div class="showcase-text">
+                    <h2>Create a shared alarm in seconds.</h2>
+                    <p>Pick a time, add someone, repeat if you want.</p>
+                </div>
+                <div class="showcase-media">
+                    <img src="Screenshot 2.png" alt="Create shared alarms" class="showcase-img">
+                </div>
+            </div>
+
+            <!-- Section B: Text Left, Image Right (Desktop) -->
+            <!-- HTML Order: Text then Image (for Mobile stacking) -->
+            <div class="showcase-row desktop-row-normal">
+                <div class="showcase-text">
+                    <h2>Accountability you can see.</h2>
+                    <p>Track on-time, snoozes, and shared progress.</p>
+                </div>
+                <div class="showcase-media">
+                    <img src="Screenshot 3.png" alt="Track accountability" class="showcase-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about waking up better.</p>
+
+            <div class="faq-grid">
+                <!-- Column 1 -->
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>What is RingLink?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-body">
+                            <p>RingLink is a shared alarm app that helps you wake up on time with friends, couples, or
+                                teams—so you’re accountable, not alone.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>How do shared alarms work?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-body">
+                            <p>You create an alarm, invite someone, and both of you get the same wake-up time. You can
+                                see each other’s wake results to stay consistent.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>Do I need internet for alarms to ring?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-body">
+                            <p>Your alarm will still ring on your phone. Internet is mainly used for syncing and shared
+                                features like invites and shared stats.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>Can I use RingLink as a normal alarm app?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-body">
+                            <p>Yes. You can set personal alarms too—shared alarms are optional.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>What happens if my friend doesn’t wake up?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-body">
+                            <p>RingLink shows the wake outcome (like stopped or snoozed), so you can follow up and keep
+                                each other on track.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>Is RingLink free?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-body">
+                            <p>RingLink offers a free version, with optional upgrades for advanced features (like deeper
+                                insights and extra customization).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content-wrapper">
+            <!-- Top Row -->
+            <div class="footer-top">
+                <div class="footer-brand-group">
+                    <p class="footer-slogan-minimal">Designed for a beautiful start — <span
+                            class="slogan-soft">together.</span></p>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2024 RingLink. All rights reserved.</p>
+
+                <div class="footer-nav-group">
+                    <nav class="footer-nav">
+                        <a href="#">Privacy</a>
+                        <a href="about.html">About</a>
+                        <a href="#">Terms</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                    <a href="https://www.instagram.com/ringlinkalarm?igsh=bGxrcHVxOWR5aTZr&utm_source=qr"
+                        aria-label="Instagram" class="footer-social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="backend.js"></script>
+</body>
+
+</html>
