@@ -454,6 +454,11 @@ ul {
     }
 }
 
+/* Mobile Eyebrow - Hidden on Desktop */
+.mobile-eyebrow {
+    display: none;
+}
+
 .section-text {
     font-size: 1.8rem;
     max-width: 800px;
@@ -462,6 +467,56 @@ ul {
     color: var(--text-main);
     line-height: 1.4;
     letter-spacing: -0.5px;
+}
+
+@media (max-width: 480px) {
+    .section-text-wrapper {
+        text-align: left;
+        max-width: 22rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mobile-eyebrow {
+        display: block;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-secondary);
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .section-text {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .story-line-1 {
+        font-size: 30px;
+        line-height: 1.15;
+        font-weight: 700;
+        display: block;
+        color: var(--text-main);
+    }
+
+    .story-line-2,
+    .story-line-3 {
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 400;
+        color: var(--text-main);
+        display: block;
+    }
+
+    .highlight-text {
+        color: var(--accent-color);
+        font-weight: 600;
+    }
 }
 
 /* Feature Highlight (Two Column) */
@@ -1211,16 +1266,45 @@ margin: 0;
         min-height: 400px;
     }
 
+    /* Hero Mobile Adjustments */
+    .hero {
+        min-height: auto;
+        padding-bottom: 0;
+        border-bottom-left-radius: 55px;
+        /* Reduced curve */
+        border-bottom-right-radius: 55px;
+        position: relative;
+        /* Requested */
+        overflow: hidden;
+        /* Clip the image to the curve */
+    }
+
+    .hero-images {
+        margin: 0;
+        width: 100%;
+        display: block;
+    }
+
     .hero-images .app-screen {
         position: relative;
-        left: auto;
-        top: auto;
-        right: auto;
-        transform: none;
+        left: auto !important;
+        top: auto !important;
+        right: auto !important;
+        transform: translateX(45px) !important;
+        /* Move right a bit */
         display: block;
-        margin: 20px auto;
-        width: 80%;
-        max-width: 300px;
+        margin: 30px auto 0 auto !important;
+        /* Added 30px top margin to push lower */
+        margin-bottom: -20% !important;
+        /* Crop bottom 20% */
+        width: 100% !important;
+        max-width: none !important;
+        /* Full width */
+        height: auto !important;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 0;
+        /* Let container clip it */
     }
 }
 
