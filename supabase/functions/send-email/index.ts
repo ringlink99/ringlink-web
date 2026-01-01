@@ -43,7 +43,7 @@ serve(async (req) => {
                 'Authorization': `Bearer ${RESEND_API_KEY}`,
             },
             body: JSON.stringify({
-                from: 'RingLink <onboarding@resend.dev>',
+                from: 'RingLink <contact@ringlinkalarm.com',
                 to: email,
                 subject: 'You are on the list! 🚀',
                 html: `<p>Thanks for joining RingLink! We will notify you when the beta is ready.</p>`
@@ -71,7 +71,7 @@ serve(async (req) => {
                 'Authorization': `Bearer ${RESEND_API_KEY}`,
             },
             body: JSON.stringify({
-                from: 'RingLink Contact <onboarding@resend.dev>',
+                from: 'RingLink Contact <contact@ringlinkalarm.com',
                 to: YOUR_EMAIL, 
                 subject: `New Message: ${subject || 'No Subject'}`,
                 html: `
