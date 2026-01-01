@@ -92,7 +92,7 @@ serve(async (req) => {
                 'Authorization': `Bearer ${RESEND_API_KEY}`,
             },
             body: JSON.stringify({
-                from: 'RingLink Support <onboarding@resend.dev>',
+                from: 'RingLink Support <contact@ringlinkalarm.com>',
                 to: email,
                 subject: 'We received your message 📬',
                 html: `<p>Hi ${name},</p><p>Thanks for reaching out. We have received your message and will get back to you shortly!</p><p>- The RingLink Team</p>`
