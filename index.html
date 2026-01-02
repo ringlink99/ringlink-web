@@ -7,6 +7,23 @@
     <title>RingLink - The World’s First Shared Alarm App</title>
     <meta name="description"
         content="Wake up together with RingLink, the world's first shared alarm app. Hold your friends accountable and never miss a wake-up call.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ringlinkalarm.com/">
+    <meta property="og:title" content="RingLink - The World’s First Shared Alarm App">
+    <meta property="og:description"
+        content="Wake up together with RingLink. Hold your friends accountable and never miss a wake-up call.">
+    <meta property="og:image" content="https://ringlinkalarm.com/hero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ringlinkalarm.com/">
+    <meta property="twitter:title" content="RingLink - The World’s First Shared Alarm App">
+    <meta property="twitter:description"
+        content="Wake up together with RingLink. Hold your friends accountable and never miss a wake-up call.">
+    <meta property="twitter:image" content="https://ringlinkalarm.com/hero.png">
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Ringlink-logo.png">
     <script>
@@ -114,10 +131,14 @@
         <div class="container navbar-content">
             <!-- Changed nav-container to container navbar-content for consistency -->
             <a href="#" class="logo">
-                <img src="Ringlink-logo.png" alt="RingLink Logo">
+                <img src="Ringlink-logo-white.png" alt="RingLink Logo" class="logo-white">
+                <img src="Ringlink-logo.png" alt="RingLink Logo" class="logo-color">
                 RingLink
             </a>
-            <a href="#waitlist" class="btn btn-sm btn-nav">Join beta</a>
+            <div class="nav-menu">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -142,7 +163,8 @@
             <!-- Central focus Hero Image -->
             <picture>
                 <source media="(max-width: 768px)" srcset="Mobile-hero.png">
-                <img src="Hero3.png" alt="RingLink App Interface Main" class="app-screen screen-main"
+                <img src="Hero3.png" alt="RingLink App Interface showing shared alarm dashboard"
+                    class="app-screen screen-main"
                     style="position: relative; transform: none; left: 100px; top: auto; width: 662px; display: block;">
             </picture>
         </div>

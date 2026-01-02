@@ -2,66 +2,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Intro Loader
     const loader = document.getElementById('intro-loader');
+    const hasSeenLoader = sessionStorage.getItem('hasSeenLoader');
+
     if (loader) {
-        // Prevent scroll on load
-        document.body.style.overflow = 'hidden';
+        if (hasSeenLoader) {
+            loader.remove();
+        } else {
+            // Prevent scroll on load
+            document.body.style.overflow = 'hidden';
 
-        // Timer to match animation duration (approx 2s total now)
-        setTimeout(() => {
-            loader.classList.add('fade-out');
-            document.body.style.overflow = '';
-
-            // Remove from DOM after fade transition
+            // Timer to match animation duration (approx 2s total now)
             setTimeout(() => {
-                loader.remove();
-            }, 550);
-        }, 2200); // Extended time for smoother look
+                loader.classList.add('fade-out');
+                document.body.style.overflow = '';
+                sessionStorage.setItem('hasSeenLoader', 'true');
+
+                // Remove from DOM after fade transition
+                setTimeout(() => {
+                    loader.remove();
+                }, 550);
+            }, 2200); // Extended time for smoother look
+        }
     }
 
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Waitlist Form Handling
-    const form = document.getElementById('waitlist-form');
-    const successMessage = document.getElementById('success-message');
-    const emailInput = document.getElementById('email');
-
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const email = emailInput.value.trim();
-
-            // Basic validation
-            if (validateEmail(email)) {
-                // Simulate network request
-                setTimeout(() => {
-                    // If success message exists, show it (Footer form)
-                    if (successMessage) {
-                        form.classList.add('hidden');
-                        successMessage.classList.remove('hidden');
-                    } else {
-                        // Hero form (visual message removed) - Update button
-                        const btn = form.querySelector('button');
-                        if (btn) {
-                            btn.textContent = 'Joined!';
-                            btn.style.background = '#2F9E44'; // Success Green
-                            btn.style.color = 'white';
-                            btn.disabled = true;
-                        }
-                        emailInput.value = '';
-                    }
-                }, 500);
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                alert('Please enter a valid email address.');
+                navbar.classList.remove('scrolled');
             }
         });
     }
