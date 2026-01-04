@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - RingLink</title>
     <meta name="description" content="Meet the team behind RingLink, the world's first shared alarm app.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Ringlink-logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/Ringlink-logo.png">
     <script>
         !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init Xr es pi Zr rs Kr Qr capture Ni calculateEventProperties os register register_once register_for_session unregister unregister_for_session ds getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty us ns createPersonProfile hs Vr vs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing ss debug O ls getPageViewId captureTraceFeedback captureTraceMetric qr".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
         posthog.init('phc_QEJjgJRjInsaWoSx0N1IO0xbiH7lep3xS1Ct51wPy88', {
@@ -24,8 +24,8 @@
     <nav class="navbar nav-light">
         <div class="container navbar-content">
             <a href="index.html" class="logo">
-                <img src="Ringlink-logo-white.png" alt="RingLink Logo" class="logo-white">
-                <img src="Ringlink-logo.png" alt="RingLink Logo" class="logo-color">
+                <img src="assets/images/Ringlink-logo-white.png" alt="RingLink Logo" class="logo-white">
+                <img src="assets/images/Ringlink-logo.png" alt="RingLink Logo" class="logo-color">
                 RingLink
             </a>
             <div class="nav-menu">
@@ -35,42 +35,22 @@
         </div>
     </nav>
 
-    <!-- About Header -->
-    <section class="about-header">
-        <div class="container hover-move">
-            <h1 class="about-title">The people building RingLink</h1>
-            <p class="about-subtitle">Built for better mornings—together.</p>
-        </div>
-    </section>
 
     <!-- Meet the Team Section -->
     <section class="meet-team-section">
         <div class="container">
-            <div class="team-split-layout">
-                <!-- Text Column -->
-                <div class="team-text">
-                    <h2 class="team-headline">From calls to shared alarms.</h2>
-                    <p class="team-description">
-                        RingLink started with something simple: we wanted to help each other wake up on time. At first,
-                        it was calls. Then “are you up?” texts. It worked—until it didn’t. After a few days, it started
-                        to feel awkward. People got busy, replies came late, and the habit quietly broke.
-                        <br><br>
-                        We realized the problem wasn’t motivation—it was friction. No one wants to chase their friends
-                        every morning, and no one wants to be chased.
-                        <br><br>
-                        So we built RingLink: one shared alarm that rings for everyone, at the same time. You set the
-                        intention once, and RingLink handles the follow-through—so mornings start better, together.
-                    </p>
-                </div>
-                <!-- Image Column -->
-                <div class="team-media">
-                    <img src="TEAM.png" alt="RingLink Team Photo" class="team-photo">
-                </div>
+            <div class="about-hero-text animate-on-scroll">
+                <h2 class="team-headline reveal-text">The people building RingLink</h2>
+                <p class="team-description reveal-text">Built for better mornings—together.</p>
             </div>
+        </div>
+
+        <!-- Cinematic Photo -->
+        <div class="cinematic-team-container animate-on-scroll">
+            <img src="assets/images/TEAM.png" alt="RingLink Team Photo" class="team-photo-cinematic">
         </div>
     </section>
 
-    <!-- Detailed Team Section -->
     <!-- Detailed Team Section -->
     <section class="team-detailed-section">
         <div class="container">
@@ -84,7 +64,7 @@
             <div class="people-grid">
                 <!-- Person 1 -->
                 <div class="person-card animate-on-scroll animate-delay-1">
-                    <img src="Sajad.png" alt="Sajad - Co-founder of RingLink" class="person-img">
+                    <img src="assets/images/Sajad.png" alt="Sajad - Co-founder of RingLink" class="person-img">
                     <h3 class="person-name">Sajad</h3>
                     <p class="person-role">Co-founder · Design & Frontend</p>
                     <p class="person-bio">Leads product design and frontend. Focused on clarity, speed, and a calm
@@ -93,7 +73,7 @@
 
                 <!-- Person 2 -->
                 <div class="person-card animate-on-scroll animate-delay-2">
-                    <img src="Fareouq.png" alt="Farouq - Co-founder of RingLink" class="person-img">
+                    <img src="assets/images/Fareouq.png" alt="Farouq - Co-founder of RingLink" class="person-img">
                     <h3 class="person-name">Farouq</h3>
                     <p class="person-role">Co-founder · Backend Engineering</p>
                     <p class="person-bio">Owns backend and reliability—sync, notifications, and the infrastructure that
@@ -102,7 +82,7 @@
 
                 <!-- Person 3 -->
                 <div class="person-card animate-on-scroll animate-delay-3">
-                    <img src="Maseeh.jpg" alt="Maseeh - Backend Engineer at RingLink" class="person-img">
+                    <img src="assets/images/Maseeh.jpg" alt="Maseeh - Backend Engineer at RingLink" class="person-img">
                     <h3 class="person-name">Maseeh</h3>
                     <p class="person-role">Backend Engineer</p>
                     <p class="person-bio">Backend engineer focused on performance and stability, helping RingLink scale
@@ -148,8 +128,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="backend.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/backend.js"></script>
 </body>
 
 </html>

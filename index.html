@@ -14,7 +14,7 @@
     <meta property="og:title" content="RingLink - The World’s First Shared Alarm App">
     <meta property="og:description"
         content="Wake up together with RingLink. Hold your friends accountable and never miss a wake-up call.">
-    <meta property="og:image" content="https://ringlinkalarm.com/hero.png">
+    <meta property="og:image" content="https://ringlinkalarm.com/assets/images/hero.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -22,10 +22,10 @@
     <meta property="twitter:title" content="RingLink - The World’s First Shared Alarm App">
     <meta property="twitter:description"
         content="Wake up together with RingLink. Hold your friends accountable and never miss a wake-up call.">
-    <meta property="twitter:image" content="https://ringlinkalarm.com/hero.png">
+    <meta property="twitter:image" content="https://ringlinkalarm.com/assets/images/hero.png">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Ringlink-logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/Ringlink-logo.png">
     <script>
         !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init Xr es pi Zr rs Kr Qr capture Ni calculateEventProperties os register register_once register_for_session unregister unregister_for_session ds getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty us ns createPersonProfile hs Vr vs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing ss debug O ls getPageViewId captureTraceFeedback captureTraceMetric qr".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
         posthog.init('phc_QEJjgJRjInsaWoSx0N1IO0xbiH7lep3xS1Ct51wPy88', {
@@ -131,8 +131,8 @@
         <div class="container navbar-content">
             <!-- Changed nav-container to container navbar-content for consistency -->
             <a href="#" class="logo">
-                <img src="Ringlink-logo-white.png" alt="RingLink Logo" class="logo-white">
-                <img src="Ringlink-logo.png" alt="RingLink Logo" class="logo-color">
+                <img src="assets/images/Ringlink-logo-white.png" alt="RingLink Logo" class="logo-white">
+                <img src="assets/images/Ringlink-logo.png" alt="RingLink Logo" class="logo-color">
                 RingLink
             </a>
             <div class="nav-menu">
@@ -162,8 +162,8 @@
         <div class="hero-images animate-on-scroll animate-delay-2" style="margin-bottom: 0; z-index: 20;">
             <!-- Central focus Hero Image -->
             <picture>
-                <source media="(max-width: 768px)" srcset="Mobile-hero.png">
-                <img src="Hero3.png" alt="RingLink App Interface showing shared alarm dashboard"
+                <source media="(max-width: 768px)" srcset="assets/images/Mobile-hero.png">
+                <img src="assets/images/Hero3.png" alt="RingLink App Interface showing shared alarm dashboard"
                     class="app-screen screen-main"
                     style="position: relative; transform: none; left: 100px; top: auto; width: 662px; display: block;">
             </picture>
@@ -174,12 +174,21 @@
     <section class="problem-section animate-on-scroll">
         <div class="container section-text-wrapper">
             <span class="mobile-eyebrow">Why RingLink exists</span>
-            <p class="section-text">
-                <span class="reveal-text story-line-1">Waking each other up starts with calls and texts.</span>
-                <span class="reveal-text story-line-2">After a few days, it gets awkward—and people stop.</span>
-                <span class="reveal-text story-line-3">RingLink makes it simple: <span class="highlight-text">set it
-                        once</span>, and we handle the rest.</span>
-            </p>
+            <div class="section-text">
+                <span class="reveal-text story-line-1">From calls to shared alarms.</span>
+                <p class="reveal-text story-line-2">
+                    RingLink started with something simple: we wanted to help each other wake up on time. At first, it
+                    was calls. Then “are you up?” texts. It worked—until it didn’t.
+                </p>
+                <p class="reveal-text story-line-3">
+                    After a few days, it started to feel awkward. People got busy, replies came late, and the habit
+                    quietly broke. We realized the problem wasn’t motivation—it was friction.
+                </p>
+                <p class="reveal-text story-line-4">
+                    RingLink makes it simple: <span class="highlight-text">set it once</span>, and we handle the rest.
+                    One shared alarm for everyone, so mornings start better, together.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -196,7 +205,7 @@
                     <p>Pick a time, add someone, repeat if you want.</p>
                 </div>
                 <div class="showcase-media">
-                    <img src="SS1-NEW.png" alt="Create shared alarms" class="showcase-img">
+                    <img src="assets/images/SS1-NEW.png" alt="Create shared alarms" class="showcase-img">
                 </div>
             </div>
 
@@ -207,7 +216,7 @@
                     <p>It rings for everyone at the same time.</p>
                 </div>
                 <div class="showcase-media">
-                    <img src="SS2-NEW.png" alt="Accept alarm invite" class="showcase-img">
+                    <img src="assets/images/SS2-NEW.png" alt="Accept alarm invite" class="showcase-img">
                 </div>
             </div>
 
@@ -218,7 +227,7 @@
                     <p>Track on-time, snoozes, and shared progress.</p>
                 </div>
                 <div class="showcase-media">
-                    <img src="SS3-NEW.png" alt="Track accountability" class="showcase-img">
+                    <img src="assets/images/SS3-NEW.png" alt="Track accountability" class="showcase-img">
                 </div>
             </div>
         </div>
@@ -343,8 +352,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="backend.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/backend.js"></script>
 </body>
 
 </html>

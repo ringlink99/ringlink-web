@@ -111,15 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('active');
         });
     });
-    // Team Statement "Wave of Color" Animation
-    const teamStatement = document.querySelector('.team-statement');
-    if (teamStatement) {
-        const text = teamStatement.innerText;
-        teamStatement.innerHTML = text.split('').map((char, index) => {
+    // Wave of Color Animation (Team Statement, Story Headline, Contact Title)
+    document.querySelectorAll('.team-statement, .story-line-1, .page-title').forEach(element => {
+        const text = element.innerText;
+        element.innerHTML = text.split('').map((char, index) => {
             if (char === ' ') return ' '; // Keep spaces as is
-            // Handle line breaks (innerText usually converts <br> to \n)
             if (char === '\n') return '<br>';
             return `<span style="--i:${index}">${char}</span>`;
         }).join('');
-    }
+    });
 });

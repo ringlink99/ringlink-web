@@ -7,6 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Your Supabase Function URL
     const API_URL = "https://qptiepgdqhuimxfpswqn.supabase.co/functions/v1/send-email";
 
+    // Helper: Show Liquid Alert
+    function showLiquidAlert(message, type = 'info') {
+        let container = document.querySelector('.liquid-alert-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'liquid-alert-container';
+            document.body.appendChild(container);
+        }
+
+        const alert = document.createElement('div');
+        alert.className = `liquid-alert ${type}`;
+
+        const icons = {
+            success: '✓',
+            error: '✕',
+            info: 'ℹ'
+        };
+
+        alert.innerHTML = `
+            <span class="liquid-alert-icon">${icons[type] || '•'}</span>
+            <span class="liquid-alert-message">${message}</span>
+        `;
+
+        container.appendChild(alert);
+
+        // Auto-remove
+        setTimeout(() => {
+            alert.classList.add('fade-out');
+            setTimeout(() => alert.remove(), 400);
+        }, 4000);
+    }
+
     // Helper: Send Data
     async function sendToSupabase(data) {
         try {
@@ -17,12 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const result = await response.json();
-            if (!response.ok) throw new Error(result.error || 'Error sending data');
-            return true;
+
+            if (!response.ok) {
+                // Return the error message from the server if available
+                return { success: false, error: result.error || 'Error sending data' };
+            }
+            return { success: true };
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Something went wrong. Please try again.");
-            return false;
+            return { success: false, error: "Something went wrong. Please try again." };
         }
     }
 
@@ -42,25 +77,37 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.textContent = "Joining...";
             btn.disabled = true;
 
-            const success = await sendToSupabase({
+            const result = await sendToSupabase({
                 email: emailInput.value,
                 type: 'waitlist'
             });
 
-            if (success) {
-                if (successMessage) {
-                    waitlistForm.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
-                } else {
-                    btn.textContent = "Joined!";
-                    btn.style.background = "#2F9E44"; // Green
-                    btn.style.color = "white";
-                }
+            if (result.success) {
+                showLiquidAlert("Successfully joined the waitlist!", "success");
+
+                // Keep "Joined!" state for 3 seconds then reset
+                const prevBg = btn.style.background;
+                const prevColor = btn.style.color;
+
+                btn.textContent = "Joined!";
+                btn.style.background = "#2F9E44"; // Green
+                btn.style.color = "white";
                 emailInput.value = "";
 
-                // Track Event in PostHog (Optional)
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = prevBg;
+                    btn.style.color = prevColor;
+                    btn.disabled = false;
+
+                    // If we used a success message overlay, we could optionally show the form again here
+                    // but for now we follow the button reset logic requested.
+                }, 3000);
+
                 if (typeof posthog !== 'undefined') posthog.capture('joined_waitlist');
             } else {
+                // Show specific error (e.g., "already on the list")
+                showLiquidAlert(result.error, "error");
                 btn.textContent = originalText;
                 btn.disabled = false;
             }
@@ -86,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.textContent = "Sending...";
             btn.disabled = true;
 
-            const success = await sendToSupabase({
+            const result = await sendToSupabase({
                 type: 'contact',
                 email: email,
                 name: `${firstName} ${lastName}`,
@@ -94,7 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: message
             });
 
-            if (success) {
+            if (result.success) {
+                showLiquidAlert("Message sent successfully!", "success");
                 btn.textContent = "Sent!";
                 btn.style.background = "#2F9E44";
                 contactForm.reset();
@@ -105,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.disabled = false;
                 }, 3000);
             } else {
+                showLiquidAlert(result.error, "error");
                 btn.textContent = originalText;
                 btn.disabled = false;
             }

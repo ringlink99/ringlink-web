@@ -8,7 +8,7 @@
     --text-secondary: #86868B;
     --bg-color: #FFFFFF;
     --bg-secondary: #F5F5F7;
-    --nav-height: 80px;
+    --nav-height: 60px;
     /* Increased from 60px for larger logo */
     --radius-lg: 28px;
     --radius-md: 18px;
@@ -20,7 +20,7 @@
 
 @media (max-width: 768px) {
     :root {
-        --nav-height: 60px;
+        --nav-height: 70px;
     }
 }
 
@@ -282,23 +282,26 @@ ul {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: var(--text-main);
 
-    /* Maintained Sizing */
-    width: 100%;
+    /* Maintained Sizing + Rounded Corners */
+    width: calc(100% - 40px);
+    max-width: 1160px;
+    /* Aligns with container + some padding */
     height: var(--nav-height);
-    top: 0;
-    left: 0;
-    transform: none;
-    border-radius: 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 768px) {
     .navbar.scrolled {
-        width: 100%;
-        top: 0;
+        width: calc(100% - 24px);
+        top: 10px;
+        border-radius: 20px;
     }
 }
 
@@ -558,28 +561,27 @@ ul {
         filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.problem-section.visible .reveal-text {
+.visible .reveal-text {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
 }
 
-/* Stagger Delays (80-120ms) */
-.problem-section.visible .reveal-text:nth-child(1) {
+/* Default Stagger Delays */
+.visible .reveal-text:nth-child(1) {
     transition-delay: 0.1s;
-    /* 100ms */
 }
 
-.problem-section.visible .reveal-text:nth-child(2) {
+.visible .reveal-text:nth-child(2) {
     transition-delay: 0.2s;
-    /* +100ms */
 }
 
-.problem-section.visible .reveal-text:nth-child(3) {
+.visible .reveal-text:nth-child(3) {
     transition-delay: 0.3s;
-    /* +100ms */
-    color: #1D1D1F;
-    /* Ensure final line is crisp/dark */
+}
+
+.visible .reveal-text:nth-child(4) {
+    transition-delay: 0.4s;
 }
 
 /* Prefers Reduced Motion */
@@ -599,7 +601,7 @@ ul {
 
 .section-text {
     font-size: 1.8rem;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     font-weight: 600;
     color: var(--text-main);
@@ -793,7 +795,7 @@ ul {
 
 .section-text {
     font-size: 1.5rem;
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
     font-weight: 500;
     color: var(--text-main);
@@ -1702,7 +1704,7 @@ margin: 0;
 }
 
 .meet-team-section {
-    padding: 80px 0 120px;
+    padding: 80px 0 0x;
 }
 
 .team-split-layout {
@@ -1869,17 +1871,125 @@ margin: 0;
 }
 
 /* Ensure mobile overrides still apply if needed, so placing basic responsive tweaks here */
+/* Home Page Story Refinement */
+.story-line-1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    display: block;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.story-line-2,
+.story-line-3,
+.story-line-4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    /* Slightly increased for better readability */
+    color: var(--text-secondary);
+    /* Default muted state */
+    display: block;
+    font-weight: 600;
+    transition: color 0.6s ease;
+    /* Smooth transition into 'brightness' */
+}
+
+/* Staggered 'Brightness' (Final Visible State) */
+.animate-on-scroll.visible .reveal-text:nth-child(1) {
+    color: var(--text-main);
+}
+
+.animate-on-scroll.visible .reveal-text:nth-child(2) {
+    color: var(--text-secondary);
+}
+
+.animate-on-scroll.visible .reveal-text:nth-child(3) {
+    color: var(--text-secondary);
+}
+
+.animate-on-scroll.visible .reveal-text:nth-child(4) {
+    color: var(--text-main);
+}
+
 @media (max-width: 768px) {
-    .about-title {
+    .story-line-1 {
         font-size: 2.5rem;
     }
 
+    .story-line-2,
+    .story-line-3,
+    .story-line-4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Cinematic Team Photo (About Page) */
+.cinematic-team-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.team-photo-cinematic {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cinematic-team-container:hover .team-photo-cinematic {
+    transform: scale(1.02);
+}
+
+@media (max-width: 900px) {
+    .team-photo-cinematic {
+        height: 50vh;
+        border-radius: 24px;
+    }
+}
+
+/* About Page Hero Refinement */
+.about-hero-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 60px auto;
+}
+
+.team-headline {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    margin-top: 60px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.team-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+/* Staggered Reveal for About Hero */
+.about-hero-text.visible .reveal-text:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.about-hero-text.visible .reveal-text:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+@media (max-width: 768px) {
     .team-headline {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
+        margin-top: 40px;
     }
 
-    .meet-team-section {
-        padding-top: 20px;
+    .team-description {
+        font-size: 1.1rem;
     }
 }
 
@@ -1914,7 +2024,9 @@ margin: 0;
 }
 
 /* Color Wave Animation */
-.team-statement span {
+.team-statement span,
+.story-line-1 span,
+.page-title span {
     display: inline-block;
     animation: colorWave 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     /* Slower, smoother easing */
@@ -2020,5 +2132,79 @@ margin: 0;
         grid-template-columns: 1fr;
         /* Stack vertically */
         gap: 48px;
+    }
+}
+
+/* Liquid Alert System */
+.liquid-alert-container {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.liquid-alert {
+    min-width: 320px;
+    max-width: 90vw;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 16px 24px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    pointer-events: all;
+    animation: liquidAlertIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.4s ease;
+}
+
+.liquid-alert.fade-out {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+}
+
+.liquid-alert-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.liquid-alert-message {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1D1D1F;
+    line-height: 1.4;
+}
+
+.liquid-alert.error .liquid-alert-icon {
+    color: #FF3B30;
+}
+
+.liquid-alert.success .liquid-alert-icon {
+    color: #34C759;
+}
+
+.liquid-alert.info .liquid-alert-icon {
+    color: #007AFF;
+}
+
+@keyframes liquidAlertIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.9);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
     }
 }
