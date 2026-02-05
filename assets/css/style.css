@@ -520,13 +520,23 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .hero-subtitle {
-        font-size: 1.05rem;
-        /* ~16-17px for mobile */
-        max-width: 90%;
+    .hero-title {
+        font-size: 2.5rem;
+        /* Reduced from 4rem */
+        line-height: 1.1;
+        margin-bottom: 16px;
     }
 
-    /* Fixed: Mobile Hero Image */
+    .hero-subtitle {
+        font-size: 1rem;
+        /* Slightly smaller */
+        line-height: 1.5;
+        max-width: 100%;
+        /* Use full width */
+        padding: 0 16px;
+        /* Ensure padding */
+    }
+
     /* Fixed: Mobile Hero Image */
     .screen-main {
         width: 100% !important;
